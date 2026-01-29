@@ -133,27 +133,72 @@ body {
   text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 /* --------------------------------------------------
-   Header Styles
+   Layout Grid (Main Page Structure)
+   -------------------------------------------------- */
+
+.layout-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.header-section {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.sidebar-section {
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: auto;
+}
+
+.main-section {
+  grid-column: 2;
+  grid-row: 2;
+  overflow-y: auto;
+}
+
+.main-section iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* --------------------------------------------------
+   Header Styles (Using Flexbox)
    -------------------------------------------------- */
 
 .header-container {
   /* CHANGE COLORS HERE: Header background color */
   background-color: var(--dark-purple);
-  padding: 20px 0;
+  padding: 20px;
   box-shadow: 0 2px 10px var(--shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header-table {
-  margin: 0 auto;
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .header-logo {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .header-logo:hover {
@@ -170,10 +215,11 @@ body {
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   margin: 0;
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------
-   Navigation Menu Styles
+   Navigation Menu Styles (Using Flexbox)
    -------------------------------------------------- */
 
 .menu-container {
@@ -182,15 +228,17 @@ body {
   /* CHANGE COLORS HERE: Navigation menu text color */
   color: var(--text-light);
   padding: 20px 15px;
-  min-height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-title {
   /* CHANGE COLORS HERE: Menu title color */
   color: var(--accent-purple);
   font-family: 'Roboto', sans-serif;
-  font-size: 1.8em;
-  margin-bottom: 10px;
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
   /* CHANGE COLORS HERE: Menu title border color */
   border-bottom: 2px solid var(--accent-purple);
   padding-bottom: 10px;
@@ -200,7 +248,7 @@ body {
   border: none;
   /* CHANGE COLORS HERE: Menu divider line color */
   border-top: 1px solid var(--accent-purple);
-  margin: 15px 0;
+  margin: 10px 0;
   opacity: 0.5;
 }
 
@@ -227,6 +275,7 @@ body {
 .menu-link img {
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .menu-link:hover img {
@@ -253,7 +302,7 @@ body {
   color: var(--primary-purple);
   font-size: 2.5em;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0 0 30px 0;
   /* CHANGE COLORS HERE: Page title border color */
   border-bottom: 3px solid var(--primary-purple);
   padding-bottom: 15px;
@@ -275,8 +324,17 @@ body {
 }
 
 /* --------------------------------------------------
-   Home Page Styles
+   Home Page Styles (Using Flexbox)
    -------------------------------------------------- */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+}
 
 .welcome-message {
   font-weight: 700;
@@ -284,6 +342,7 @@ body {
   color: var(--primary-purple);
   font-size: 2em;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .profile-image {
@@ -308,6 +367,7 @@ body {
   max-width: 600px;
   margin: 0 auto 30px;
   line-height: 1.8;
+  text-align: center;
 }
 
 .footer-text {
@@ -315,10 +375,11 @@ body {
   color: var(--primary-purple);
   font-style: italic;
   margin-top: 40px;
+  text-align: center;
 }
 
 /* --------------------------------------------------
-   Form Styles
+   Form Styles (Using Flexbox)
    -------------------------------------------------- */
 
 .contact-form {
@@ -329,6 +390,15 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .form-label {
@@ -336,8 +406,7 @@ body {
   font-weight: 700;
   /* CHANGE COLORS HERE: Form label text color */
   color: var(--primary-purple);
-  margin-bottom: 8px;
-  margin-top: 15px;
+  margin: 0;
 }
 
 .form-input,
@@ -372,8 +441,8 @@ body {
   font-size: 1em;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 20px;
   transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
 .form-submit:hover {
@@ -389,24 +458,30 @@ body {
 }
 
 /* --------------------------------------------------
-   List Styles
+   List Styles (Using Flexbox)
    -------------------------------------------------- */
 
 .content-list {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .content-list li {
   /* CHANGE COLORS HERE: List item background color */
   background: white;
-  margin-bottom: 20px;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px var(--shadow);
   /* CHANGE COLORS HERE: List item left border color */
   border-left: 4px solid var(--primary-purple);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-list li:hover {
@@ -420,35 +495,63 @@ body {
   /* CHANGE COLORS HERE: List item title text color */
   color: var(--primary-purple);
   font-size: 1.1em;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.list-item-title + p {
+  margin-top: 0;
+}
+
+/* Grid layout option for list items */
+.content-list.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.content-list.grid-layout li {
+  transform: none;
+}
+
+.content-list.grid-layout li:hover {
+  transform: translateY(-5px);
 }
 
 /* --------------------------------------------------
-   Contact List Styles
+   Contact List Styles (Using Flexbox)
    -------------------------------------------------- */
 
 .contact-list {
   list-style: none;
   padding-left: 0;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
 }
 
 .contact-list li {
   /* CHANGE COLORS HERE: Contact list item background color */
   background: white;
-  margin-bottom: 15px;
   padding: 15px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 10px;
   box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.contact-list li:hover {
+  transform: translateX(5px);
 }
 
 .contact-icon {
   width: 24px;
   height: 24px;
   filter: opacity(0.8);
+  flex-shrink: 0;
 }
 
 .contact-type {
@@ -463,18 +566,33 @@ body {
 .contact-type.instagram { color: #E4405F; }
 
 /* --------------------------------------------------
-   Education Section
+   Education Section (Using Flexbox)
    -------------------------------------------------- */
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 .education-block {
   /* CHANGE COLORS HERE: Education block background color */
   background: white;
   padding: 25px;
-  margin-bottom: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 8px var(--shadow);
   /* CHANGE COLORS HERE: Education block top border color */
   border-top: 4px solid var(--primary-purple);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(106, 13, 173, 0.2);
 }
 
 .education-level {
@@ -483,13 +601,17 @@ body {
   /* CHANGE COLORS HERE: Education level title text color */
   color: var(--primary-purple);
   font-size: 1.3em;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 .education-details {
   line-height: 1.8;
   /* CHANGE COLORS HERE: Education details text color */
   color: var(--text-dark);
+}
+
+.education-details p {
+  margin: 5px 0;
 }
 
 /* --------------------------------------------------
@@ -520,44 +642,16 @@ body {
   padding: 12px 15px;
   /* CHANGE COLORS HERE: Table cell border color */
   border-bottom: 1px solid var(--light-purple);
+  background: white;
 }
 
-.styled-table tr:hover {
+.styled-table tr:hover td {
   /* CHANGE COLORS HERE: Table row hover background color (adjust rgba for different purple tint) */
   background-color: rgba(216, 191, 216, 0.3);
 }
 
 .styled-table tr:last-child td {
   border-bottom: none;
-}
-
-/* --------------------------------------------------
-   Layout Grid (Modern Alternative to Framesets)
-   -------------------------------------------------- */
-
-.layout-container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 200px 1fr;
-  height: 100vh;
-}
-
-.header-section {
-  grid-column: 1 / -1;
-}
-
-.sidebar-section {
-  overflow-y: auto;
-}
-
-.main-section {
-  overflow-y: auto;
-}
-
-.main-section iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
 }
 
 /* --------------------------------------------------
@@ -693,6 +787,10 @@ body {
 @media screen and (max-width: 768px) {
   /* Mobile/Tablet Responsive Styles */
   
+  body {
+    overflow: auto;
+  }
+  
   .content-page {
     padding: 20px;
   }
@@ -702,11 +800,21 @@ body {
   }
   
   .header-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
   }
   
   .menu-container {
     padding: 15px 10px;
+    min-height: auto;
+  }
+  
+  .menu-title {
+    font-size: 1.3em;
   }
   
   .contact-form {
@@ -716,10 +824,36 @@ body {
   .layout-container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
+    height: auto;
+    min-height: 100vh;
   }
   
   .sidebar-section {
     grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .main-section {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .content-list.grid-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .home-container {
+    padding: 20px 15px;
+  }
+  
+  .welcome-message {
+    font-size: 1.5em;
+  }
+  
+  .profile-image {
+    max-width: 180px;
+    width: 180px;
+    height: auto;
   }
 }
 
@@ -760,7 +894,10 @@ body {
     content: " (" attr(title) ")";
   }
 
-
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
   a[href^="#"]::after,
   a[href^="javascript:"]::after {
     content: "";
