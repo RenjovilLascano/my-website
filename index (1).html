@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renjovil Joseph V. Lascano - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .layout-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 200px 1fr;
+            height: 100vh;
+        }
+        
+        .header-section {
+            grid-column: 1 / -1;
+        }
+        
+        .sidebar-section {
+            overflow-y: auto;
+        }
+        
+        .main-section {
+            overflow-y: auto;
+        }
+        
+        .main-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .layout-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto 1fr;
+            }
+            
+            .sidebar-section {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <div class="header-section">
+            <div class="header-container">
+                <table class="header-table" cellpadding="10">
+                    <tr>
+                        <td>
+                            <img src="images/logo.jpg" alt="DLSU Logo" height="88" width="88" class="header-logo">
+                        </td>
+                        <td>
+                            <h1 class="header-title">Renjovil Joseph V. Lascano</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="sidebar-section">
+            <div class="menu-container">
+                <h1 class="menu-title">Menu</h1>
+                <hr class="menu-divider">
+                
+                <a href="home.html" target="mainContent" class="menu-link">
+                    <img src="images/home.png" alt="Home" width="20" height="20">
+                    <span>Home</span>
+                </a>
+                <hr class="menu-divider">
+                
+                <a href="about.html" target="mainContent" class="menu-link">
+                    <img src="images/about.png" alt="About" width="20" height="20">
+                    <span>About</span>
+                </a>
+                <hr class="menu-divider">
+                
+                <a href="works.html" target="mainContent" class="menu-link">
+                    <img src="images/works.png" alt="Works" width="20" height="20">
+                    <span>Works</span>
+                </a>
+                <hr class="menu-divider">
+                
+                <a href="experience.html" target="mainContent" class="menu-link">
+                    <img src="images/experience.png" alt="Experience" width="20" height="20">
+                    <span>Experience</span>
+                </a>
+                <hr class="menu-divider">
+                
+                <a href="education.html" target="mainContent" class="menu-link">
+                    <img src="images/education.png" alt="Education" width="20" height="20">
+                    <span>Education</span>
+                </a>
+                <hr class="menu-divider">
+                
+                <a href="references.html" target="mainContent" class="menu-link">
+                    <img src="images/references.png" alt="References" width="20" height="20">
+                    <span>References</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="main-section">
+            <iframe src="home.html" name="mainContent"></iframe>
+        </div>
+    </div>
+</body>
+</html>
