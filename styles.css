@@ -133,7 +133,6 @@ body {
   text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 /* --------------------------------------------------
@@ -146,6 +145,7 @@ body {
   grid-template-columns: 220px 1fr;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .header-section {
@@ -163,13 +163,28 @@ body {
   grid-column: 2;
   grid-row: 2;
   overflow-y: auto;
+  position: relative;
 }
 
-.main-section iframe {
+/* Content Section Switching (No Iframe) */
+.content-section {
+  display: none;
   width: 100%;
-  height: 100%;
-  border: none;
+  min-height: 100%;
+}
+
+.content-section.active {
   display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* --------------------------------------------------
@@ -265,6 +280,11 @@ body {
   gap: 10px;
 }
 
+.menu-link.active {
+  background-color: rgba(240, 217, 255, 0.25);
+  font-weight: 500;
+}
+
 .menu-link:hover {
   /* CHANGE COLORS HERE: Menu link hover background color (adjust the alpha value in rgba for transparency) */
   background-color: rgba(240, 217, 255, 0.15);
@@ -292,7 +312,6 @@ body {
   /* CHANGE COLORS HERE: Content page text color */
   color: var(--primary-purple);
   padding: 40px;
-  min-height: 100vh;
 }
 
 .page-title {
@@ -332,7 +351,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
   padding: 40px 20px;
 }
 
@@ -697,6 +715,293 @@ body {
   animation: fadeIn 0.6s ease-out;
 }
 
+/* --------------------------------------------------
+   Resume Section Styles (Integrated)
+   -------------------------------------------------- */
+
+.resume-wrapper {
+  background: var(--light-purple);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resume {
+  width: 800px;
+  max-width: 95%;
+  height: auto;
+  display: flex;
+  box-shadow: 0 8px 24px rgba(106, 13, 173, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  margin: 0 auto;
+}
+
+.resume .resume_left {
+  width: 280px;
+  min-width: 280px;
+  background: #7D3C98;
+}
+
+.resume .resume_left .resume_profile {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resume .resume_left .resume_content {
+  padding: 0 25px;
+}
+
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resume_left .bold {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.resume .resume_left .regular {
+  color: #F0D9FF;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #F0D9FF;
+}
+
+.resume .resume_left .resume_item:last-child,
+.resume .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.resume .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #7D3C98;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.resume .icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_left ul li .data {
+  color: #F0D9FF;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.resume .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #F0D9FF;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+  font-size: 14px;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #6A0DAD;
+  position: relative;
+  border-radius: 3px;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+  font-size: 14px;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.resume .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume .semi-bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: #fff;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.resume .resume_right .bold {
+  color: #6A0DAD;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+  list-style: none;
+}
+
+.resume .resume_right ul li {
+  position: relative;
+  list-style: none;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #7D3C98;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.resume .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.resume .resume_right .resume_work ul li:before,
+.resume .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #6A0DAD;
+}
+
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #6A0DAD;
+}
+
+.resume .resume_right .resume_hobby ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.resume .resume_right .resume_hobby ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #6A0DAD;
+  border-radius: 50%;
+  position: relative;
+  color: #6A0DAD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.resume .resume_right .resume_hobby ul li:hover {
+  background: #F0D9FF;
+  transform: scale(1.05);
+}
+
+.resume .resume_right .resume_hobby ul li i {
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_right .resume_hobby ul li:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #6A0DAD;
+}
+
+.resume .resume_right .resume_hobby ul li:last-child:before {
+  display: none;
+}
+
+.resume .resume_about p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* --------------------------------------------------
+   End of Custom Styles
+   -------------------------------------------------- */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -854,6 +1159,31 @@ body {
     max-width: 180px;
     width: 180px;
     height: auto;
+  }
+  
+  /* Resume responsive */
+  .resume {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .resume .resume_left,
+  .resume .resume_right {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  .resume .resume_right .resume_hobby ul {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .resume .resume_right .resume_hobby ul li:before {
+    display: none;
+  }
+  
+  .resume-wrapper {
+    padding: 20px 10px;
   }
 }
 
