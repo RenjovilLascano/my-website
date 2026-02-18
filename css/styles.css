@@ -512,7 +512,7 @@ body {
   margin-left: 2px;
 }
 
-/* Field error message */
+/* Per-field error text */
 .field-error {
   display: block;
   font-size: 0.82em;
@@ -521,7 +521,7 @@ body {
   margin-top: 2px;
 }
 
-/* Input states — valid / invalid */
+/* Input border states */
 .form-input.input-error,
 .form-textarea.input-error {
   border-color: #c0392b;
@@ -550,10 +550,8 @@ body {
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95em;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .form-status--visible {

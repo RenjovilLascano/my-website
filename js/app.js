@@ -44,6 +44,7 @@ let submitTimes = [];
 
 function isRateLimited() {
     const now = Date.now();
+    // Keep only timestamps within the last 60 seconds
     submitTimes = submitTimes.filter(t => now - t < 60000);
     if (submitTimes.length >= 3) return true;
     submitTimes.push(now);
@@ -75,7 +76,7 @@ function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/* ---- 3e. UI helpers ---- */
+/* ---- 3e. UI Helpers ---- */
 function setFieldError(inputEl, errorElId, message) {
     const errEl = document.getElementById(errorElId);
     inputEl.classList.add("input-error");
@@ -97,6 +98,7 @@ function clearFieldState(inputEl, errorElId) {
 }
 
 function showFormStatus(message, type) {
+    // type: "error" | "warning" | "success"
     const statusEl = document.getElementById("form-status");
     if (!statusEl) return;
     statusEl.textContent = message;
@@ -160,16 +162,18 @@ function attachRealTimeValidation(form) {
     }
 }
 
-/* ---- 3g. Main form handler ---- */
+/* ---- 3g. Main Form Handler ---- */
 function handleContactForm() {
     const form = document.getElementById("contactForm");
     if (!form) return;
 
+    // Record when the form becomes available (for time-based filtering)
     formLoadTime = Date.now();
+
     attachRealTimeValidation(form);
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault();
+        e.preventDefault(); // Hold submission until all checks pass
 
         const nameEl    = form.querySelector("#contact-name");
         const emailEl   = form.querySelector("#contact-email");
@@ -263,6 +267,7 @@ function initNavigation() {
             sections.forEach(section => {
                 if (section.id === target) {
                     section.classList.add("active");
+                    // Reset form timer each time About section is opened
                     if (target === "about") {
                         formLoadTime = Date.now();
                     }
