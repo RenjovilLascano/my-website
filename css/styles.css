@@ -503,8 +503,82 @@ body {
 }
 
 /* --------------------------------------------------
-   List Styles (Using Flexbox)
+   Form Validation & Feedback Styles
    -------------------------------------------------- */
+
+/* Required field asterisk */
+.required-mark {
+  color: #c0392b;
+  margin-left: 2px;
+}
+
+/* Field error message */
+.field-error {
+  display: block;
+  font-size: 0.82em;
+  color: #c0392b;
+  min-height: 1.1em;
+  margin-top: 2px;
+}
+
+/* Input states — valid / invalid */
+.form-input.input-error,
+.form-textarea.input-error {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+.form-input.input-ok,
+.form-textarea.input-ok {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.12);
+}
+
+/* Character counter */
+.char-counter {
+  display: block;
+  font-size: 0.78em;
+  color: var(--dark-purple);
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* Form status banner */
+.form-status {
+  display: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-status--visible {
+  display: block;
+}
+
+.form-status--error {
+  background-color: #fdecea;
+  color: #c0392b;
+  border-left: 4px solid #c0392b;
+}
+
+.form-status--warning {
+  background-color: #fff8e1;
+  color: #b7770d;
+  border-left: 4px solid #f0a500;
+}
+
+.form-status--success {
+  background-color: #eafaf1;
+  color: #1e8449;
+  border-left: 4px solid #27ae60;
+}
+
+
 
 .content-list {
   list-style: none;

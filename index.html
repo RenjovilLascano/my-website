@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Renjovil Joseph V. Lascano - Portfolio</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta name="description" content="Portfolio website of Renjovil Joseph V. Lascano - Computer Engineering Student">
 
@@ -92,11 +92,7 @@
       <section id="home" class="content-section active">
         <div class="content-page">
           <div class="home-container">
-            <p id="greeting-message" class="greeting-message"></p>
-
             <p class="welcome-message">Welcome to my Portfolio Website</p>
-
-            <div id="clock" class="home-clock"></div>
             
             <img src="images/selfportrait.jpeg" width="200" alt="Renjovil Joseph V. Lascano" class="profile-image">
             
@@ -125,24 +121,49 @@
           </p>
 
           <h2 class="section-title">Contact Me</h2>
-          
-          <form class="contact-form">
+
+          <!-- Status banner (shown by JS on validation errors) -->
+          <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+
+          <form id="contactForm"
+                class="contact-form"
+                action="https://formsubmit.co/renjovil_joseph_lascano@dlsu.edu.ph"
+                method="POST"
+                novalidate>
+
+            <!-- FormSubmit hidden config fields -->
+            <input type="hidden" name="_subject" value="New Message from Portfolio">
+            <input type="hidden" name="_captcha" value="false">
+            <!-- Redirect back to the portfolio after successful submission -->
+            <input type="hidden" name="_next" value="">
+
             <div class="form-group">
-              <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" name="name" class="form-input" required>
+              <label for="contact-name" class="form-label">Name: <span class="required-mark">*</span></label>
+              <input type="text" id="contact-name" name="name"
+                     class="form-input" placeholder="Your full name"
+                     minlength="2" maxlength="80" required>
+              <span class="field-error" id="error-name"></span>
             </div>
 
             <div class="form-group">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" id="email" name="email" class="form-input" required>
+              <label for="contact-email" class="form-label">Email: <span class="required-mark">*</span></label>
+              <input type="email" id="contact-email" name="email"
+                     class="form-input" placeholder="your@email.com"
+                     required>
+              <span class="field-error" id="error-email"></span>
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Message:</label>
-              <textarea id="message" name="message" rows="4" class="form-textarea" required></textarea>
+              <label for="contact-message" class="form-label">Message: <span class="required-mark">*</span></label>
+              <textarea id="contact-message" name="message"
+                        rows="5" class="form-textarea"
+                        placeholder="Write your message here…"
+                        minlength="10" maxlength="1000" required></textarea>
+              <span class="field-error" id="error-message"></span>
+              <span class="char-counter" id="char-counter">0 / 1000</span>
             </div>
 
-            <input type="submit" value="Send Message" class="form-submit">
+            <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
           </form>
           
           <h4 class="section-title">You may also contact me through the following socials</h4>
@@ -154,11 +175,11 @@
             </li>
             <li>
               <img src="images/envelope.png" alt="DLSU Email" width="24" height="24" class="contact-icon">
-              <span class="contact-type email">DLSU Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="681a0d0602071e01043702071b0d18003704091b0b090607280c041b1d460d0c1d461800">[email&#160;protected]</a>
+              <span class="contact-type email">DLSU Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4230272c282d342b2e1d282d3127322a1d2e233121232c2d02262e31376c2726376c322a">[email&#160;protected]</a>
             </li>
             <li>
               <img src="images/envelope.png" alt="Personal Email" width="24" height="24" class="contact-icon">
-              <span class="contact-type personal-email">Personal Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4436212a2e2b322d286a28253727252a2b04213c25293428216a272b29">[email&#160;protected]</a>
+              <span class="contact-type personal-email">Personal Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493b2c2723263f20256725283a2a282726092c31282439252c672a2624">[email&#160;protected]</a>
             </li>
             <li>
               <img src="images/instagram.png" alt="Instagram" width="24" height="24" class="contact-icon">
@@ -286,28 +307,28 @@
             <li class="fade-in">
               <div class="list-item-title">Dr. Maria Santos</div>
               <p>Professor, De La Salle University</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="066b67746f672875676872697546626a75732863627328766e">[email&#160;protected]</a></p>
+              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb2beadb6bef1acbeb1abb0ac9fbbb3acaaf1babbaaf1afb7">[email&#160;protected]</a></p>
               <p><strong>Phone:</strong> +63 912 345 6789</p>
             </li>
             
             <li class="fade-in">
               <div class="list-item-title">Engr. Juan Dela Cruz</div>
               <p>Project Supervisor, Robotics Club</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf6e9fdf2b2f8f9f0fdffeee9e6dcfbf1fdf5f0b2fff3f1">[email&#160;protected]</a></p>
+              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f79d829699d993929b969485828db7909a969e9bd994989a">[email&#160;protected]</a></p>
               <p><strong>Phone:</strong> +63 917 234 5678</p>
             </li>
             
             <li class="fade-in">
               <div class="list-item-title">Ms. Angela Reyes</div>
               <p>Dance Instructor, Performance Arts Club</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7b6b9b0b2bbb6f9a5b2aeb2a497b2afb6baa7bbb2f9b4b8ba">[email&#160;protected]</a></p>
+              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbf4fdfff6fbb4e8ffe3ffe9daffe2fbf7eaf6ffb4f9f5f7">[email&#160;protected]</a></p>
               <p><strong>Phone:</strong> +63 915 678 1234</p>
             </li>
             
             <li class="fade-in">
               <div class="list-item-title">Mr. Roberto Lim</div>
               <p>IT Mentor, Community Center Volunteer Program</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20524f424552544f0e4c494d604558414d504c450e434f4d">[email&#160;protected]</a></p>
+              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e5978a878097918acb898c88a5809d8488958980cb868a88">[email&#160;protected]</a></p>
               <p><strong>Phone:</strong> +63 918 987 6543</p>
             </li>
           </ul>
@@ -350,7 +371,7 @@
                         <i class="fas fa-envelope"></i>
                       </div>
                       <div class="data">
-                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1062757e7a7f66797c4f7a7f637560784f7c716373717e7f50747c63653e7574653e6078">[email&#160;protected]</a>
+                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="addfc8c3c7c2dbc4c1f2c7c2dec8ddc5f2c1ccdececcc3c2edc9c1ded883c8c9d883ddc5">[email&#160;protected]</a>
                       </div>
                     </li>
                   </ul>
@@ -516,6 +537,6 @@
     </main>
   </div>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
