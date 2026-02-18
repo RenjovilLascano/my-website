@@ -1,12 +1,3 @@
-// ============================================================
-//  app.js — Portfolio Website JavaScript
-//  LBYCPG3 — Renjovil Joseph V. Lascano
-// ============================================================
-
-
-// ============================================================
-// 1. TIME-BASED GREETING
-// ============================================================
 function getGreeting() {
     const hour = new Date().getHours();
     if (hour >= 5  && hour < 12) return "Good Morning!";
@@ -20,10 +11,6 @@ function displayGreeting() {
     if (el) el.textContent = getGreeting();
 }
 
-
-// ============================================================
-// 2. LIVE DIGITAL CLOCK
-// ============================================================
 function updateClock() {
     const el = document.getElementById("clock");
     if (!el) return;
@@ -34,46 +21,39 @@ function updateClock() {
     el.textContent = `${h}:${m}:${s}`;
 }
 
-
-// ============================================================
-// 3. TYPING EFFECT — Home welcome message
-// ============================================================
 function typeText(elementId, text, speed = 60) {
     const el = document.getElementById(elementId);
     if (!el) return;
-
-    el.textContent = "";   // clear before typing
+    el.textContent = "";
     let index = 0;
-
     function typeNextChar() {
         if (index < text.length) {
             el.textContent += text.charAt(index);
             index++;
             setTimeout(typeNextChar, speed);
         }
-        // Typing done — cursor keeps blinking via CSS animation
     }
-
     typeNextChar();
 }
 
-
-// ============================================================
-// 4. CONTACT FORM — VALIDATION & SPAM PROTECTION
-// ============================================================
-
-/* ---- 4a. Rate Limiting (max 3 submissions per minute) ---- */
-let submitTimes = [];
-
 function isRateLimited() {
     const now = Date.now();
-    submitTimes = submitTimes.filter(t => now - t < 60000);
-    if (submitTimes.length >= 3) return true;
-    submitTimes.push(now);
+    const LIMIT = 3;
+    const WINDOW = 60000;
+
+    let times = JSON.parse(localStorage.getItem("submitTimes") || "[]");
+    times = times.filter(t => now - t < WINDOW);
+
+    if (times.length >= LIMIT) {
+        localStorage.setItem("submitTimes", JSON.stringify(times));
+        return true;
+    }
+
+    times.push(now);
+    localStorage.setItem("submitTimes", JSON.stringify(times));
     return false;
 }
 
-/* ---- 4b. Time-based Filtering (< 2 seconds = likely bot) ---- */
 let formLoadTime = null;
 
 function isTooFast() {
@@ -81,7 +61,6 @@ function isTooFast() {
     return (Date.now() - formLoadTime) / 1000 < 2;
 }
 
-/* ---- 4c. Spam Keyword Detection ---- */
 const SPAM_WORDS = [
     "free money", "buy now", "click here",
     "subscribe", "promo", "limited offer",
@@ -93,12 +72,10 @@ function containsSpam(text) {
     return SPAM_WORDS.some(word => lower.includes(word));
 }
 
-/* ---- 4d. Email Format Validation ---- */
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/* ---- 4e. UI Helpers ---- */
 function setFieldError(inputEl, errorElId, message) {
     const errEl = document.getElementById(errorElId);
     inputEl.classList.add("input-error");
@@ -130,7 +107,6 @@ function showFormStatus(message, type) {
     }, 6000);
 }
 
-/* ---- 4f. Real-time Validation (as user types) ---- */
 function attachRealTimeValidation(form) {
     const nameEl    = form.querySelector("#contact-name");
     const emailEl   = form.querySelector("#contact-email");
@@ -183,7 +159,6 @@ function attachRealTimeValidation(form) {
     }
 }
 
-/* ---- 4g. Main Form Handler ---- */
 function handleContactForm() {
     const form = document.getElementById("contactForm");
     if (!form) return;
@@ -204,7 +179,6 @@ function handleContactForm() {
 
         let valid = true;
 
-        // --- Comprehensive Validation ---
         if (name.length < 2) {
             setFieldError(nameEl, "error-name", "Name must be at least 2 characters.");
             valid = false;
@@ -237,26 +211,22 @@ function handleContactForm() {
             return;
         }
 
-        // --- Spam Keyword Detection ---
         if (containsSpam(message)) {
             setFieldError(messageEl, "error-message", "Your message contains blocked spam keywords.");
             showFormStatus("Your message was flagged as spam. Please revise it.", "warning");
             return;
         }
 
-        // --- Time-based Filtering ---
         if (isTooFast()) {
             showFormStatus("Submission was too fast. Please review your message and try again.", "warning");
             return;
         }
 
-        // --- Rate Limiting ---
         if (isRateLimited()) {
             showFormStatus("Too many submissions. Please wait a minute before trying again.", "warning");
             return;
         }
 
-        // --- All checks passed: log to console then submit ---
         console.log("=== Contact Form Submission ===");
         console.log("Name:   ", name);
         console.log("Email:  ", email);
@@ -267,10 +237,6 @@ function handleContactForm() {
     });
 }
 
-
-// ============================================================
-// 5. SIDEBAR NAVIGATION — section switching
-// ============================================================
 function initNavigation() {
     const menuLinks = document.querySelectorAll(".menu-link");
     const sections  = document.querySelectorAll(".content-section");
@@ -297,18 +263,11 @@ function initNavigation() {
     });
 }
 
-
-// ============================================================
-// 6. INITIALISE ON PAGE LOAD
-// ============================================================
 window.onload = function () {
     displayGreeting();
     updateClock();
     setInterval(updateClock, 1000);
-
-    // Typing effect — starts immediately on page load
     typeText("typed-welcome", "Welcome to my Portfolio Website", 65);
-
     handleContactForm();
     initNavigation();
 };
