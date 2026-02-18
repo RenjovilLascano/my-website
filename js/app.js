@@ -36,22 +36,44 @@ function updateClock() {
 
 
 // ============================================================
-// 3. CONTACT FORM — VALIDATION & SPAM PROTECTION
+// 3. TYPING EFFECT — Home welcome message
+// ============================================================
+function typeText(elementId, text, speed = 60) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    el.textContent = "";   // clear before typing
+    let index = 0;
+
+    function typeNextChar() {
+        if (index < text.length) {
+            el.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeNextChar, speed);
+        }
+        // Typing done — cursor keeps blinking via CSS animation
+    }
+
+    typeNextChar();
+}
+
+
+// ============================================================
+// 4. CONTACT FORM — VALIDATION & SPAM PROTECTION
 // ============================================================
 
-/* ---- 3a. Rate Limiting (max 3 submissions per minute) ---- */
+/* ---- 4a. Rate Limiting (max 3 submissions per minute) ---- */
 let submitTimes = [];
 
 function isRateLimited() {
     const now = Date.now();
-    // Keep only timestamps within the last 60 seconds
     submitTimes = submitTimes.filter(t => now - t < 60000);
     if (submitTimes.length >= 3) return true;
     submitTimes.push(now);
     return false;
 }
 
-/* ---- 3b. Time-based Filtering (< 2 seconds = likely bot) ---- */
+/* ---- 4b. Time-based Filtering (< 2 seconds = likely bot) ---- */
 let formLoadTime = null;
 
 function isTooFast() {
@@ -59,7 +81,7 @@ function isTooFast() {
     return (Date.now() - formLoadTime) / 1000 < 2;
 }
 
-/* ---- 3c. Spam Keyword Detection ---- */
+/* ---- 4c. Spam Keyword Detection ---- */
 const SPAM_WORDS = [
     "free money", "buy now", "click here",
     "subscribe", "promo", "limited offer",
@@ -71,12 +93,12 @@ function containsSpam(text) {
     return SPAM_WORDS.some(word => lower.includes(word));
 }
 
-/* ---- 3d. Email Format Validation ---- */
+/* ---- 4d. Email Format Validation ---- */
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/* ---- 3e. UI Helpers ---- */
+/* ---- 4e. UI Helpers ---- */
 function setFieldError(inputEl, errorElId, message) {
     const errEl = document.getElementById(errorElId);
     inputEl.classList.add("input-error");
@@ -98,7 +120,6 @@ function clearFieldState(inputEl, errorElId) {
 }
 
 function showFormStatus(message, type) {
-    // type: "error" | "warning" | "success"
     const statusEl = document.getElementById("form-status");
     if (!statusEl) return;
     statusEl.textContent = message;
@@ -109,7 +130,7 @@ function showFormStatus(message, type) {
     }, 6000);
 }
 
-/* ---- 3f. Real-time Validation (as user types) ---- */
+/* ---- 4f. Real-time Validation (as user types) ---- */
 function attachRealTimeValidation(form) {
     const nameEl    = form.querySelector("#contact-name");
     const emailEl   = form.querySelector("#contact-email");
@@ -162,18 +183,16 @@ function attachRealTimeValidation(form) {
     }
 }
 
-/* ---- 3g. Main Form Handler ---- */
+/* ---- 4g. Main Form Handler ---- */
 function handleContactForm() {
     const form = document.getElementById("contactForm");
     if (!form) return;
 
-    // Record when the form becomes available (for time-based filtering)
     formLoadTime = Date.now();
-
     attachRealTimeValidation(form);
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Hold submission until all checks pass
+        e.preventDefault();
 
         const nameEl    = form.querySelector("#contact-name");
         const emailEl   = form.querySelector("#contact-email");
@@ -250,7 +269,7 @@ function handleContactForm() {
 
 
 // ============================================================
-// 4. SIDEBAR NAVIGATION — section switching
+// 5. SIDEBAR NAVIGATION — section switching
 // ============================================================
 function initNavigation() {
     const menuLinks = document.querySelectorAll(".menu-link");
@@ -267,7 +286,6 @@ function initNavigation() {
             sections.forEach(section => {
                 if (section.id === target) {
                     section.classList.add("active");
-                    // Reset form timer each time About section is opened
                     if (target === "about") {
                         formLoadTime = Date.now();
                     }
@@ -281,12 +299,16 @@ function initNavigation() {
 
 
 // ============================================================
-// 5. INITIALISE ON PAGE LOAD
+// 6. INITIALISE ON PAGE LOAD
 // ============================================================
 window.onload = function () {
     displayGreeting();
     updateClock();
     setInterval(updateClock, 1000);
+
+    // Typing effect — starts immediately on page load
+    typeText("typed-welcome", "Welcome to my Portfolio Website", 65);
+
     handleContactForm();
     initNavigation();
 };
