@@ -1368,3 +1368,152 @@ body {
     page-break-after: avoid;
   }
 }
+/* --------------------------------------------------
+   Career e-Portfolio additions
+   -------------------------------------------------- */
+
+.tagline {
+  font-weight: 700;
+  color: var(--dark-purple);
+  text-align: center;
+  margin: 15px 0 5px;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 25px;
+}
+
+.link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0 25px;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid var(--primary-purple);
+  background: var(--primary-purple);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.link-button:hover {
+  transform: translateY(-2px);
+  background: var(--dark-purple);
+  color: #fff;
+}
+
+.link-button--outline {
+  background: transparent;
+  color: var(--primary-purple);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background: #fff;
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-purple);
+  border-radius: 15px;
+  padding: 4px 12px;
+  font-size: 0.9em;
+}
+
+.item-meta {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--dark-purple);
+  margin-bottom: 8px !important;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+.content-list .bullet-list li {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  display: list-item;
+}
+
+.content-list .bullet-list li:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.list-item-title i,
+.section-title i {
+  margin-right: 6px;
+}
+
+.contact-fa {
+  width: 24px;
+  font-size: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.content-page a {
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1000px;
+  margin: 0 auto 15px;
+}
+
+/* Timeline line follows the entry height instead of a fixed 115px */
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  height: calc(100% - 4px);
+}
+
+.resume .resume_right .resume_work ul li:last-child:after,
+.resume .resume_right .resume_education ul li:last-child:after {
+  display: none;
+}
+
+@media print {
+  .header-section,
+  .sidebar-section,
+  .resume-actions,
+  .content-section:not(#resume) {
+    display: none !important;
+  }
+  .layout-container { display: block; }
+  #resume { display: block !important; }
+}
+
+.resume-wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
+.resume-actions {
+  width: 100%;
+}
