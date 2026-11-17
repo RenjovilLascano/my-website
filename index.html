@@ -4,22 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Renjovil Joseph V. Lascano - Portfolio</title>
+  <title>Renjovil Joseph V. Lascano - Career e-Portfolio</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta name="description" content="Portfolio website of Renjovil Joseph V. Lascano - Computer Engineering Student">
+  <meta name="description" content="Career e-Portfolio of Renjovil Joseph V. Lascano - Computer Engineering student (Minor in Data Science) at De La Salle University, focused on data science, machine learning, and robotics.">
 
-  <meta property="og:title" content="Renjovil Joseph V. Lascano - Portfolio">
+  <meta property="og:title" content="Renjovil Joseph V. Lascano - Career e-Portfolio">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="Renjovil Joseph V. Lascano Portfolio">
+  <meta property="og:description" content="Computer Engineering Student | Data Science &amp; Machine Learning | Robotics &amp; Embedded Systems">
+  <meta property="og:image" content="images/selfportrait.jpeg">
+  <meta property="og:image:alt" content="Renjovil Joseph V. Lascano">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#6A0DAD">
 </head>
 
@@ -35,59 +30,65 @@
         </div>
       </div>
     </header>
-    
+
     <!-- Sidebar Navigation Section -->
     <nav class="sidebar-section">
       <div class="menu-container">
         <h1 class="menu-title">Menu</h1>
         <hr class="menu-divider">
-        
+
         <a href="#home" class="menu-link active" data-section="home">
           <i class="fas fa-home"></i>
           <span>Home</span>
         </a>
         <hr class="menu-divider">
-        
+
         <a href="#about" class="menu-link" data-section="about">
           <i class="fas fa-user"></i>
-          <span>About</span>
+          <span>About Me</span>
         </a>
         <hr class="menu-divider">
-        
+
+        <a href="#resume" class="menu-link" data-section="resume">
+          <i class="fas fa-file-alt"></i>
+          <span>Resume</span>
+        </a>
+        <hr class="menu-divider">
+
         <a href="#works" class="menu-link" data-section="works">
-          <i class="fas fa-briefcase"></i>
-          <span>Works</span>
+          <i class="fas fa-laptop-code"></i>
+          <span>Academic Works</span>
         </a>
         <hr class="menu-divider">
-        
+
         <a href="#experience" class="menu-link" data-section="experience">
-          <i class="fas fa-star"></i>
+          <i class="fas fa-briefcase"></i>
           <span>Experience</span>
         </a>
         <hr class="menu-divider">
-        
+
         <a href="#education" class="menu-link" data-section="education">
           <i class="fas fa-graduation-cap"></i>
           <span>Education</span>
         </a>
         <hr class="menu-divider">
-        
+
+        <a href="#achievements" class="menu-link" data-section="achievements">
+          <i class="fas fa-trophy"></i>
+          <span>Achievements</span>
+        </a>
+        <hr class="menu-divider">
+
         <a href="#references" class="menu-link" data-section="references">
           <i class="fas fa-address-book"></i>
           <span>References</span>
         </a>
-        <hr class="menu-divider">
-        
-        <a href="#resume" class="menu-link" data-section="resume">
-          <i class="fas fa-file-alt"></i>
-          <span>Resume</span>
-        </a>
       </div>
     </nav>
-    
+
     <!-- Main Content Section -->
     <main class="main-section">
-      
+
       <!-- HOME SECTION -->
       <section id="home" class="content-section active">
         <div class="content-page">
@@ -101,15 +102,30 @@
             <div id="clock" class="home-clock"></div>
 
             <img src="images/selfportrait.jpeg" width="200" alt="Renjovil Joseph V. Lascano" class="profile-image">
-            
+
+            <p class="tagline">Computer Engineering Student | Data Science &amp; Machine Learning | Robotics &amp; Embedded Systems</p>
+
             <p class="intro-text">
-              Welcome to my portfolio! Here you can explore my projects, creative works, and academic accomplishments.
-              <br>Feel free to browse through my skills and experiences, and get in touch if you'd like to collaborate or learn more about what I do.
+              Hi, I'm Renjo! I'm a BS Computer Engineering student with a Minor in Data Science at De La Salle University - Manila.
+              I enjoy turning data into insight, building things that sense and move, and creating music and dance on the side.
+              <br>This Career e-Portfolio brings together my resume, academic work, leadership experience, and creative projects.
             </p>
-            
+
+            <div class="link-buttons">
+              <a href="https://www.linkedin.com/in/renjovil/" target="_blank" rel="noopener" class="link-button">
+                <i class="fab fa-linkedin"></i> LinkedIn Profile
+              </a>
+              <a href="#resume" class="link-button link-button--outline" data-goto="resume">
+                <i class="fas fa-file-alt"></i> View Resume
+              </a>
+              <a href="https://github.com/RenjovilLascano" target="_blank" rel="noopener" class="link-button link-button--outline">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+
             <p class="footer-text">
               This site was designed and developed by Renjovil Joseph V. Lascano
-              <br>in partial fulfillment of LBYCPG3 requirements under the guidance of Sir Melvin Kong Cabatuan
+              <br>as a Career e-Portfolio, building on work done for LBYCPG3 under the guidance of Sir Melvin Kong Cabatuan
             </p>
           </div>
         </div>
@@ -119,198 +135,103 @@
       <section id="about" class="content-section">
         <div class="content-page">
           <h2 class="page-title">About Me</h2>
-          
+
           <p>
-            I am a student at De La Salle University - Manila, ID 123, taking up BS Computer Engineering and a Minor in Data Science. 
-            I am currently learning how to do simple Web Development, Digital Circuit Design, and Data Science in Python. 
-            Outside of Academics, my hobbies include dance, fitness, and music production.
+            I am a Computer Engineering student with a Minor in Data Science at De La Salle University - Manila, and a consistent
+            Dean's Lister for six terms. I have a strong interest in data science, machine learning, and robotics.
+            I use Python for data analysis, C/C++ and Arduino for embedded systems, and HTML, CSS, and JavaScript for web development.
+          </p>
+          <p>
+            Years of freelance music production have taught me creativity, self-direction, and how to see a project through from
+            client brief to final delivery. Through student organizations, community volunteering, and dance, I have also learned
+            leadership and how to work well in a team.
           </p>
 
+          <h3 class="section-title">Career Goal</h3>
+          <p>
+            I am looking for an internship in <strong>data analytics, machine learning, or robotics</strong>, where I can apply
+            my technical skills to real-world problems and keep learning from experienced engineers.
+          </p>
+
+          <h3 class="section-title">What I Bring</h3>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Data Science</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Statistics</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Software Design</span>
+            <span class="tag">Data Structures &amp; Algorithms</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Logic Pro X</span>
+            <span class="tag">Final Cut Pro</span>
+          </div>
+
+          <h3 class="section-title">Interests</h3>
+          <p>Music production, street dance, machine learning, robotics, and data science.</p>
+
+          <h3 class="section-title">Languages</h3>
+          <p>English, Filipino</p>
+
           <h2 class="section-title">Contact Me</h2>
-          
-          <form class="contact-form">
+
+          <form id="contactForm" class="contact-form" action="mailto:renjovil_joseph_lascano@dlsu.edu.ph" method="post" enctype="text/plain" novalidate>
             <div class="form-group">
-              <label for="name" class="form-label">Name:</label>
-              <input type="text" id="name" name="name" class="form-input" required>
+              <label for="contact-name" class="form-label">Name: <span class="required-mark">*</span></label>
+              <input type="text" id="contact-name" name="name" class="form-input" required>
+              <span id="error-name" class="field-error"></span>
             </div>
 
             <div class="form-group">
-              <label for="email" class="form-label">Email:</label>
-              <input type="email" id="email" name="email" class="form-input" required>
+              <label for="contact-email" class="form-label">Email: <span class="required-mark">*</span></label>
+              <input type="email" id="contact-email" name="email" class="form-input" required>
+              <span id="error-email" class="field-error"></span>
             </div>
 
             <div class="form-group">
-              <label for="message" class="form-label">Message:</label>
-              <textarea id="message" name="message" rows="4" class="form-textarea" required></textarea>
+              <label for="contact-message" class="form-label">Message: <span class="required-mark">*</span></label>
+              <textarea id="contact-message" name="message" rows="4" class="form-textarea" maxlength="1000" required></textarea>
+              <span id="char-counter" class="char-counter">0 / 1000</span>
+              <span id="error-message" class="field-error"></span>
             </div>
 
             <input type="submit" value="Send Message" class="form-submit">
+            <div id="form-status" class="form-status" role="status"></div>
           </form>
-          
-          <h4 class="section-title">You may also contact me through the following socials</h4>
-          
+
+          <h4 class="section-title">You may also reach me through the following</h4>
+
           <ul class="contact-list">
+            <li>
+              <i class="fab fa-linkedin contact-fa" style="color:#0A66C2"></i>
+              <span class="contact-type">LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/renjovil/" target="_blank" rel="noopener">linkedin.com/in/renjovil</a>
+            </li>
+            <li>
+              <img src="images/envelope.png" alt="Email" width="24" height="24" class="contact-icon">
+              <span class="contact-type email">DLSU Email:</span>
+              <a href="mailto:renjovil_joseph_lascano@dlsu.edu.ph">renjovil_joseph_lascano@dlsu.edu.ph</a>
+            </li>
+            <li>
+              <i class="fas fa-mobile-alt contact-fa"></i>
+              <span class="contact-type">Mobile:</span> (+63) 927 353 5217
+            </li>
             <li>
               <img src="images/facebook.png" alt="Facebook" width="24" height="24" class="contact-icon">
               <span class="contact-type facebook">Facebook:</span> Renjovil Joseph Lascano
             </li>
             <li>
-              <img src="images/envelope.png" alt="DLSU Email" width="24" height="24" class="contact-icon">
-              <span class="contact-type email">DLSU Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0b2a5aeaaafb6a9ac9faaafb3a5b0a89faca1b3a3a1aeaf80a4acb3b5eea5a4b5eeb0a8">[email&#160;protected]</a>
-            </li>
-            <li>
-              <img src="images/envelope.png" alt="Personal Email" width="24" height="24" class="contact-icon">
-              <span class="contact-type personal-email">Personal Email:</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3d1c6cdc9ccd5cacf8dcfc2d0c0c2cdcce3c6dbc2ced3cfc68dc0ccce">[email&#160;protected]</a>
-            </li>
-            <li>
-              <img src="images/instagram.png" alt="Instagram" width="24" height="24" class="contact-icon">
+              <img src="images/instagram-circle.png" alt="Instagram" width="24" height="24" class="contact-icon">
               <span class="contact-type instagram">Instagram:</span> @renjovil
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- WORKS SECTION -->
-      <section id="works" class="content-section">
-        <div class="content-page">
-          <h2 class="page-title">My Works</h2>
-          
-          <ul class="content-list">
-            <li class="fade-in">
-              <div class="list-item-title">Projectile Motion Simulator (MATLAB)</div>
-              <p>Developed an interactive UI project to visualize projectile motion, allowing input of variables such as angle, velocity, and gravity.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Arduino Robotics Projects</div>
-              <p>Built line-tracing robots, mission-based robots, and robot soccer competitors during Junior High, exploring embedded systems and robotics.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Student Web Development Projects</div>
-              <p>Created websites for school assignments using HTML, CSS, and JavaScript, focusing on user-friendly layouts and responsive design.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Dance Choreography Videos</div>
-              <p>Produced and recorded original dance choreography performances, including solo and group routines.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Music Production Samples</div>
-              <p>Created original music beats and mixes using digital audio workstations, highlighting experimentation with sound design and layering.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Graphic Design Works</div>
-              <p>Designed posters, banners, and social media graphics for school clubs and events using Photoshop and Illustrator.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE SECTION -->
-      <section id="experience" class="content-section">
-        <div class="content-page">
-          <h2 class="page-title">Experience</h2>
-
-          <ul class="content-list">
-            <li class="fade-in">
-              <div class="list-item-title">Robotics Experience – Junior High School</div>
-              <p>Created projects in Arduino, including line tracing robots, mission projects, and robot soccer competitions.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">MATLAB Experience – LBYEC2B</div>
-              <p>Developed a Projectile Simulator Project with an interactive UI, allowing users to input parameters and visualize projectile motion.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Student Web Developer – School Projects</div>
-              <p>Developed simple websites for class assignments using HTML, CSS, and basic JavaScript. Collaborated with classmates to design user-friendly interfaces.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Machine Learning Projects</div>
-              <p>Developed simple Machine Learning projects, including predictive models and data analysis tasks using Python and popular libraries such as scikit-learn and pandas for LBYEC3B.</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Graphic Designer – Club Activities</div>
-              <p>Created posters, banners, and social media graphics for school clubs and events using Canva.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- EDUCATION SECTION -->
-      <section id="education" class="content-section">
-        <div class="content-page">
-          <h2 class="page-title">Education</h2>
-
-          <div class="education-container">
-            <div class="education-block fade-in">
-              <h4 class="education-level">Junior High School</h4>
-              <div class="education-details">
-                <p>7th Grade - 10th Grade</p>
-                <p>Caritas Don Bosco School</p>
-                <p>2016 - 2021</p>
-              </div>
-            </div>
-
-            <div class="education-block fade-in">
-              <h4 class="education-level">Senior High School</h4>
-              <div class="education-details">
-                <p>Science, Technology, Engineering, and Math Strand</p>
-                <p>University of Santo Tomas - Senior High School</p>
-                <p>2021 - 2023</p>
-              </div>
-            </div>
-
-            <div class="education-block fade-in">
-              <h4 class="education-level">Higher Education</h4>
-              <div class="education-details">
-                <p>Bachelor of Computer Engineering</p>
-                <p>De La Salle University</p>
-                <p>2023 – Present</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- REFERENCES SECTION -->
-      <section id="references" class="content-section">
-        <div class="content-page">
-          <h2 class="page-title">References</h2>
-          
-          <ul class="content-list">
-            <li class="fade-in">
-              <div class="list-item-title">Dr. Maria Santos</div>
-              <p>Professor, De La Salle University</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e984889b8088c79a88879d869aa98d859a9cc78c8d9cc79981">[email&#160;protected]</a></p>
-              <p><strong>Phone:</strong> +63 912 345 6789</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Engr. Juan Dela Cruz</div>
-              <p>Project Supervisor, Robotics Club</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f756a7e71317b7a737e7c6d6a655f78727e7673317c7072">[email&#160;protected]</a></p>
-              <p><strong>Phone:</strong> +63 917 234 5678</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Ms. Angela Reyes</div>
-              <p>Dance Instructor, Performance Arts Club</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="67060900020b064915021e021427021f060a170b024904080a">[email&#160;protected]</a></p>
-              <p><strong>Phone:</strong> +63 915 678 1234</p>
-            </li>
-            
-            <li class="fade-in">
-              <div class="list-item-title">Mr. Roberto Lim</div>
-              <p>IT Mentor, Community Center Volunteer Program</p>
-              <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2b0ada0a7b0b6adecaeabaf82a7baa3afb2aea7eca1adaf">[email&#160;protected]</a></p>
-              <p><strong>Phone:</strong> +63 918 987 6543</p>
             </li>
           </ul>
         </div>
@@ -319,6 +240,11 @@
       <!-- RESUME SECTION -->
       <section id="resume" class="content-section">
         <div class="resume-wrapper">
+          <div class="resume-actions">
+            <button type="button" class="link-button" onclick="window.print()">
+              <i class="fas fa-print"></i> Print / Save as PDF
+            </button>
+          </div>
           <div class="resume">
             <div class="resume_left">
               <div class="resume_profile">
@@ -332,71 +258,71 @@
                   </div>
                   <ul>
                     <li>
-                      <div class="icon">
-                        <i class="fas fa-map-signs"></i>
-                      </div>
+                      <div class="icon"><i class="fas fa-map-signs"></i></div>
+                      <div class="data">Laguna Bel-Air 3, Biñan, Laguna <br /> Philippines</div>
+                    </li>
+                    <li>
+                      <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                      <div class="data">(+63) 927 353 5217</div>
+                    </li>
+                    <li>
+                      <div class="icon"><i class="fas fa-envelope"></i></div>
                       <div class="data">
-                        Biñan, Laguna <br /> Philippines
+                        <a href="mailto:renjovil_joseph_lascano@dlsu.edu.ph">renjovil_joseph_lascano<br>@dlsu.edu.ph</a>
                       </div>
                     </li>
                     <li>
-                      <div class="icon">
-                        <i class="fas fa-mobile-alt"></i>
-                      </div>
+                      <div class="icon"><i class="fab fa-linkedin-in"></i></div>
                       <div class="data">
-                        +63 927 353 5217
-                      </div>
-                    </li>
-                    <li>
-                      <div class="icon">
-                        <i class="fas fa-envelope"></i>
-                      </div>
-                      <div class="data">
-                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="493b2c2723263f20251623263a2c39211625283a2a282726092d253a3c672c2d3c673921">[email&#160;protected]</a>
+                        <a href="https://www.linkedin.com/in/renjovil/" target="_blank" rel="noopener">linkedin.com/in/renjovil</a>
                       </div>
                     </li>
                   </ul>
                 </div>
                 <div class="resume_item resume_skills">
                   <div class="title">
-                    <p class="bold">Skills</p>
+                    <p class="bold">Technical Skills</p>
                   </div>
                   <ul>
                     <li>
-                      <div class="skill_name">
-                        Python
-                      </div>
-                      <div class="skill_progress">
-                        <span style="width: 85%;"></span>
-                      </div>
+                      <div class="skill_name">Python</div>
+                      <div class="skill_progress"><span style="width: 85%;"></span></div>
                       <div class="skill_per">85%</div>
                     </li>
                     <li>
-                      <div class="skill_name">
-                        C/C++
-                      </div>
-                      <div class="skill_progress">
-                        <span style="width: 75%;"></span>
-                      </div>
-                      <div class="skill_per">75%</div>
-                    </li>
-                    <li>
-                      <div class="skill_name">
-                        HTML/CSS
-                      </div>
-                      <div class="skill_progress">
-                        <span style="width: 80%;"></span>
-                      </div>
+                      <div class="skill_name">Web Dev</div>
+                      <div class="skill_progress"><span style="width: 80%;"></span></div>
                       <div class="skill_per">80%</div>
                     </li>
                     <li>
-                      <div class="skill_name">
-                        MATLAB
-                      </div>
-                      <div class="skill_progress">
-                        <span style="width: 70%;"></span>
-                      </div>
+                      <div class="skill_name">C/C++</div>
+                      <div class="skill_progress"><span style="width: 75%;"></span></div>
+                      <div class="skill_per">75%</div>
+                    </li>
+                    <li>
+                      <div class="skill_name">Arduino</div>
+                      <div class="skill_progress"><span style="width: 75%;"></span></div>
+                      <div class="skill_per">75%</div>
+                    </li>
+                    <li>
+                      <div class="skill_name">MATLAB</div>
+                      <div class="skill_progress"><span style="width: 70%;"></span></div>
                       <div class="skill_per">70%</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="resume_item resume_info">
+                  <div class="title">
+                    <p class="bold">Creative Tools</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <div class="icon"><i class="fas fa-music"></i></div>
+                      <div class="data">Logic Pro X</div>
+                    </li>
+                    <li>
+                      <div class="icon"><i class="fas fa-film"></i></div>
+                      <div class="data">Final Cut Pro</div>
                     </li>
                   </ul>
                 </div>
@@ -406,27 +332,21 @@
                   </div>
                   <ul>
                     <li>
-                      <div class="icon">
-                        <i class="fab fa-github"></i>
-                      </div>
+                      <div class="icon"><i class="fab fa-github"></i></div>
                       <div class="data">
                         <p class="semi-bold">GitHub</p>
                         <p>RenjovilLascano</p>
                       </div>
                     </li>
                     <li>
-                      <div class="icon">
-                        <i class="fab fa-facebook-square"></i>
-                      </div>
+                      <div class="icon"><i class="fab fa-facebook-square"></i></div>
                       <div class="data">
                         <p class="semi-bold">Facebook</p>
-                        <p>renjovil.joseph.lascano</p>
+                        <p>Renjovil Joseph Lascano</p>
                       </div>
                     </li>
                     <li>
-                      <div class="icon">
-                        <i class="fab fa-instagram"></i>
-                      </div>
+                      <div class="icon"><i class="fab fa-instagram"></i></div>
                       <div class="data">
                         <p class="semi-bold">Instagram</p>
                         <p>@renjovil</p>
@@ -439,34 +359,56 @@
             <div class="resume_right">
               <div class="resume_item resume_about">
                 <div class="title">
-                  <p class="bold">About Me</p>
+                  <p class="bold">Profile</p>
                 </div>
-                <p>I am a student at De La Salle University - Manila, ID 123, taking up BS Computer Engineering and a Minor in Data Science. I am currently learning how to do simple Web Development, Digital Circuit Design, and Data Science in Python. Outside of Academics, my hobbies include dance, fitness, and music production.</p>
+                <p>Computer Engineering student with a Minor in Data Science at De La Salle University and consistent Dean's Lister (6 terms) with a strong interest in data science, machine learning, and robotics. Experienced in Python for data analysis, C/C++ and Arduino for embedded systems, and web development using HTML, CSS, and JavaScript. Brings creativity and self-direction from years of freelance music production, alongside leadership and teamwork developed through student organizations and community volunteering. Seeking an internship in data analytics, machine learning, or robotics to apply technical skills to real-world problems.</p>
               </div>
               <div class="resume_item resume_work">
                 <div class="title">
-                  <p class="bold">Work Experience</p>
+                  <p class="bold">Professional Experience</p>
                 </div>
                 <ul>
                   <li>
-                    <div class="date">June 2024 - August 2024</div> 
+                    <div class="date">Sep 2024 - Sep 2025</div>
                     <div class="info">
-                      <p class="semi-bold">Software Development Intern - Tech Solutions Inc.</p> 
-                      <p>Developed web applications using Python and JavaScript. Collaborated with senior developers on data analytics projects and contributed to database optimization.</p>
+                      <p class="semi-bold">Externals Officer - DLSU SYNTAX</p>
+                      <p>Contacted and coordinated with external partners. Provided technical support for SMC 2025: Into the Stellar Trail. Awarded Best Externals Officer, AY 2024-2025 Term 1.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="date">January 2024 - May 2024</div>
+                    <div class="date">Sep 2024 - Sep 2025</div>
                     <div class="info">
-                      <p class="semi-bold">Research Assistant - DLSU Electronics Laboratory</p> 
-                      <p>Assisted in digital circuit design projects and conducted experiments on signal processing. Documented research findings and presented results to faculty members.</p>
+                      <p class="semi-bold">Executive for Student Opportunities - DLSU ECG</p>
+                      <p>Sourced and promoted internship, scholarship, and career opportunities for members.</p>
                     </div>
                   </li>
                   <li>
-                    <div class="date">August 2023 - December 2023</div>
+                    <div class="date">Jan 2023 - Present</div>
                     <div class="info">
-                      <p class="semi-bold">Freelance Web Developer</p> 
-                      <p>Created responsive websites for local businesses using HTML, CSS, and basic JavaScript. Managed client communications and delivered projects within specified timelines.</p>
+                      <p class="semi-bold">Freelance Music Producer - Self-employed</p>
+                      <p>Music production and video editing services for dance teams. Produce, arrange, mix, and master original music using Logic Pro X; edit music videos and promotional content in Final Cut Pro; manage projects end-to-end from client brief to revisions and final delivery.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="resume_item resume_work">
+                <div class="title">
+                  <p class="bold">Accomplishments</p>
+                </div>
+                <ul>
+                  <li>
+                    <div class="info">
+                      <p>Consistent Dean's Lister at DLSU for 6 terms (4x First Honors, 2x Second Honors), CGPA 3.41 / 4.00</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <p>Best Externals Officer, DLSU SYNTAX, AY 2024-2025 Term 1</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="info">
+                      <p>Developed an Academic Advising System for the DLSU Department of Electronics and Computer Engineering (LBYCPG3)</p>
                     </div>
                   </li>
                 </ul>
@@ -477,41 +419,238 @@
                 </div>
                 <ul>
                   <li>
-                    <div class="date">2023 - Present</div> 
+                    <div class="date">2023 - Present</div>
                     <div class="info">
-                      <p class="semi-bold">Bachelor of Computer Engineering (De La Salle University)</p> 
-                      <p>Currently pursuing a degree in Computer Engineering with a Minor in Data Science. Engaged in coursework covering Web Development, Digital Circuit Design, and Data Science applications.</p>
+                      <p class="semi-bold">BS Computer Engineering, Minor in Data Science - De La Salle University - Manila</p>
+                      <p>CGPA: 3.41 / 4.00. Relevant coursework: Data Science (DATA100), Engineering Data Analysis, Software Design, Data Structures and Algorithms, Programming Logic and Design, Fundamentals of Electrical and Electronic Circuits.</p>
                     </div>
                   </li>
                   <li>
                     <div class="date">2021 - 2023</div>
                     <div class="info">
-                      <p class="semi-bold">Senior High School - STEM Strand (University of Santo Tomas)</p> 
-                      <p>Completed Science, Technology, Engineering, and Mathematics strand with focus on foundational engineering and scientific principles.</p>
+                      <p class="semi-bold">Senior High School - STEM Strand (University of Santo Tomas)</p>
+                      <p>Member of USTSHS Galvanize, USTSHS STEM Society, USTSHS Virtuoso, and USTSHS El Tigre Robótica.</p>
                     </div>
                   </li>
-                  <li>
-                    <div class="date">2016 - 2021</div>
-                    <div class="info">
-                      <p class="semi-bold">Junior High School (Caritas Don Bosco School)</p> 
-                      <p>Completed Grades 7-10 with strong academic performance in mathematics and sciences.</p>
-                    </div>
-                  </li>
+                </ul>
+              </div>
+              <div class="resume_item resume_work">
+                <div class="title">
+                  <p class="bold">Organizations &amp; Volunteer Work</p>
+                </div>
+                <ul>
+                  <li><div class="info"><p>Member, DLSU ACCESS</p></div></li>
+                  <li><div class="info"><p>Member, DLSU DSS</p></div></li>
+                  <li><div class="info"><p>Trainee and Performer, La Salle Dance Company - Street</p></div></li>
+                  <li><div class="info"><p>Trainee and Performer, Team Package Makers</p></div></li>
+                  <li><div class="info"><p>Volunteer, DLSU COSCA-LOVE: FTK 2025, AKV 2024 and 2025; completed Basic FSL training</p></div></li>
                 </ul>
               </div>
               <div class="resume_item resume_hobby">
                 <div class="title">
-                  <p class="bold">Hobbies</p>
+                  <p class="bold">Interests</p>
                 </div>
                 <ul>
-                  <li><i class="fas fa-music"></i></li>
-                  <li><i class="fas fa-running"></i></li>
-                  <li><i class="fas fa-headphones"></i></li>
-                  <li><i class="fas fa-book"></i></li>
+                  <li title="Music production"><i class="fas fa-music"></i></li>
+                  <li title="Street dance"><i class="fas fa-running"></i></li>
+                  <li title="Machine learning &amp; data science"><i class="fas fa-chart-line"></i></li>
+                  <li title="Robotics"><i class="fas fa-robot"></i></li>
                 </ul>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ACADEMIC WORKS SECTION -->
+      <section id="works" class="content-section">
+        <div class="content-page">
+          <h2 class="page-title">Academic Work Samples</h2>
+          <p class="section-intro">Projects from my coursework that show how I apply what I learn, from software design and data analysis to embedded systems.</p>
+
+          <ul class="content-list grid-layout">
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-user-graduate"></i> Academic Advising System</div>
+              <p class="item-meta">LBYCPG3 &middot; Software Design</p>
+              <p>Developed an Academic Advising System for the DLSU Department of Electronics and Computer Engineering, designed to streamline student advising and record-keeping.</p>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-globe"></i> Career e-Portfolio Website</div>
+              <p class="item-meta">LBYCPG3 &middot; HTML, CSS, JavaScript</p>
+              <p>This website. Built from an HTML5 Boilerplate base with a CSS Grid and Flexbox layout, a responsive purple theme, a live greeting and clock, and a validated contact form with spam and rate-limit checks.</p>
+              <p><a href="https://github.com/RenjovilLascano/my-website" target="_blank" rel="noopener">View source on GitHub &rarr;</a></p>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-brain"></i> Machine Learning Projects</div>
+              <p class="item-meta">LBYEC3B &middot; Python, scikit-learn, pandas</p>
+              <p>Built predictive models and data analysis tasks in Python using scikit-learn and pandas, covering data cleaning, model training, and evaluation.</p>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-chart-bar"></i> Data Science Coursework</div>
+              <p class="item-meta">DATA100 &middot; Engineering Data Analysis</p>
+              <p>Applied statistics and Python to explore, visualize, and draw conclusions from real datasets as part of my Minor in Data Science.</p>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-rocket"></i> Projectile Motion Simulator</div>
+              <p class="item-meta">LBYEC2B &middot; MATLAB</p>
+              <p>Developed an interactive UI that visualizes projectile motion, letting users enter parameters such as launch angle, initial velocity, and gravity.</p>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-robot"></i> Arduino Robotics Projects</div>
+              <p class="item-meta">Robotics &middot; Arduino, C/C++</p>
+              <p>Built line-tracing robots, mission-based robots, and robot soccer competitors, including work with USTSHS El Tigre Robótica, exploring embedded systems and sensors.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience" class="content-section">
+        <div class="content-page">
+          <h2 class="page-title">Leadership, Work &amp; Volunteer Experience</h2>
+
+          <h3 class="section-title"><i class="fas fa-users"></i> Student Leadership</h3>
+          <ul class="content-list">
+            <li class="fade-in">
+              <div class="list-item-title">Externals Officer &ndash; DLSU SYNTAX</div>
+              <p class="item-meta">Sep 2024 &ndash; Sep 2025 &middot; Student organization at De La Salle University</p>
+              <ul class="bullet-list">
+                <li>Contacted and coordinated with external partners.</li>
+                <li>Provided technical support for SMC 2025: Into the Stellar Trail.</li>
+                <li>Awarded <strong>Best Externals Officer</strong>, AY 2024-2025 Term 1.</li>
+              </ul>
+            </li>
+
+            <li class="fade-in">
+              <div class="list-item-title">Executive for Student Opportunities &ndash; DLSU ECG</div>
+              <p class="item-meta">Sep 2024 &ndash; Sep 2025 &middot; Student organization at De La Salle University</p>
+              <ul class="bullet-list">
+                <li>Sourced and promoted internship, scholarship, and career opportunities for members.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="section-title"><i class="fas fa-headphones"></i> Freelance Work</h3>
+          <ul class="content-list">
+            <li class="fade-in">
+              <div class="list-item-title">Freelance Music Producer &ndash; Self-employed</div>
+              <p class="item-meta">Jan 2023 &ndash; Present &middot; Music production and video editing for dance teams</p>
+              <ul class="bullet-list">
+                <li>Produce, arrange, mix, and master original music using Logic Pro X.</li>
+                <li>Edit music videos and promotional content using Final Cut Pro.</li>
+                <li>Manage projects end-to-end, from client briefs to revisions and final delivery.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3 class="section-title"><i class="fas fa-hands-helping"></i> Volunteer Work</h3>
+          <ul class="content-list">
+            <li class="fade-in">
+              <div class="list-item-title">Volunteer &ndash; DLSU COSCA-LOVE</div>
+              <p class="item-meta">FTK 2025 &middot; AKV 2024 and 2025</p>
+              <p>Volunteered in DLSU community engagement activities and completed Basic Filipino Sign Language (FSL) training.</p>
+            </li>
+          </ul>
+
+          <h3 class="section-title"><i class="fas fa-star"></i> Organizations &amp; Performing Arts</h3>
+          <ul class="content-list">
+            <li class="fade-in">
+              <div class="list-item-title">Member &ndash; DLSU ACCESS and DLSU DSS</div>
+              <p>Active member of student organizations in computer engineering and data science.</p>
+            </li>
+            <li class="fade-in">
+              <div class="list-item-title">Trainee and Performer &ndash; La Salle Dance Company - Street and Team Package Makers</div>
+              <p>Train and perform street dance routines, building discipline, teamwork, and confidence on stage.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section id="education" class="content-section">
+        <div class="content-page">
+          <h2 class="page-title">Education</h2>
+
+          <div class="education-container">
+            <div class="education-block fade-in">
+              <h4 class="education-level">Higher Education</h4>
+              <div class="education-details">
+                <p><strong>BS Computer Engineering, Minor in Data Science</strong></p>
+                <p>De La Salle University - Manila</p>
+                <p>2023 &ndash; Present &middot; CGPA 3.41 / 4.00 &middot; Dean's Lister (6 terms)</p>
+                <p>Relevant coursework: Data Science (DATA100), Engineering Data Analysis, Software Design, Data Structures and Algorithms, Programming Logic and Design, Fundamentals of Electrical and Electronic Circuits</p>
+              </div>
+            </div>
+
+            <div class="education-block fade-in">
+              <h4 class="education-level">Senior High School</h4>
+              <div class="education-details">
+                <p><strong>Science, Technology, Engineering, and Mathematics (STEM) Strand</strong></p>
+                <p>University of Santo Tomas - Senior High School</p>
+                <p>2021 &ndash; 2023</p>
+                <p>Organizations: USTSHS Galvanize, USTSHS STEM Society, USTSHS Virtuoso, USTSHS El Tigre Robótica</p>
+              </div>
+            </div>
+
+            <div class="education-block fade-in">
+              <h4 class="education-level">Junior High School</h4>
+              <div class="education-details">
+                <p><strong>Grades 7 &ndash; 10</strong></p>
+                <p>Caritas Don Bosco School</p>
+                <p>2016 &ndash; 2021</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS SECTION -->
+      <section id="achievements" class="content-section">
+        <div class="content-page">
+          <h2 class="page-title">Achievements</h2>
+
+          <ul class="content-list grid-layout">
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-medal"></i> Consistent Dean's Lister</div>
+              <p>De La Salle University, 6 terms: 4x First Honors and 2x Second Honors, with a CGPA of 3.41 / 4.00.</p>
+            </li>
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-award"></i> Best Externals Officer</div>
+              <p>DLSU SYNTAX, AY 2024-2025 Term 1, for securing and coordinating external partnerships.</p>
+            </li>
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-database"></i> Minor in Data Science</div>
+              <p>Pursuing a Minor in Data Science alongside BS Computer Engineering, building skills in Python, statistics, and data analysis.</p>
+            </li>
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-laptop-code"></i> Academic Advising System</div>
+              <p>Developed for the DLSU Department of Electronics and Computer Engineering (LBYCPG3) to streamline student advising and record-keeping.</p>
+            </li>
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-sign-language"></i> Basic FSL Training</div>
+              <p>Completed Basic Filipino Sign Language training through DLSU COSCA-LOVE.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- REFERENCES SECTION -->
+      <section id="references" class="content-section">
+        <div class="content-page">
+          <h2 class="page-title">References &amp; Testimonials</h2>
+
+          <ul class="content-list">
+            <li class="fade-in">
+              <div class="list-item-title"><i class="fas fa-address-book"></i> Character and Professional References</div>
+              <p>Available upon request. Please reach out through the <a href="#about" data-goto="about">contact form</a> or email
+                <a href="mailto:renjovil_joseph_lascano@dlsu.edu.ph">renjovil_joseph_lascano@dlsu.edu.ph</a>.</p>
+            </li>
+          </ul>
         </div>
       </section>
 

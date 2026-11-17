@@ -237,30 +237,42 @@ function handleContactForm() {
     });
 }
 
-function initNavigation() {
+function showSection(target) {
     const menuLinks = document.querySelectorAll(".menu-link");
     const sections  = document.querySelectorAll(".content-section");
+    if (!document.getElementById(target)) return;
 
-    menuLinks.forEach(link => {
+    menuLinks.forEach(l => {
+        l.classList.toggle("active", l.getAttribute("data-section") === target);
+    });
+
+    sections.forEach(section => {
+        if (section.id === target) {
+            section.classList.add("active");
+            if (target === "about") {
+                formLoadTime = Date.now();
+            }
+        } else {
+            section.classList.remove("active");
+        }
+    });
+
+    if (history.replaceState) history.replaceState(null, "", "#" + target);
+    const main = document.querySelector(".main-section");
+    if (main) main.scrollTop = 0;
+    window.scrollTo(0, 0);
+}
+
+function initNavigation() {
+    document.querySelectorAll(".menu-link, [data-goto]").forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            const target = this.getAttribute("data-section");
-
-            menuLinks.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
-
-            sections.forEach(section => {
-                if (section.id === target) {
-                    section.classList.add("active");
-                    if (target === "about") {
-                        formLoadTime = Date.now();
-                    }
-                } else {
-                    section.classList.remove("active");
-                }
-            });
+            showSection(this.getAttribute("data-section") || this.getAttribute("data-goto"));
         });
     });
+
+    const initial = window.location.hash.replace("#", "");
+    if (initial) showSection(initial);
 }
 
 window.onload = function () {
